@@ -7,6 +7,7 @@ public with sharing class GenricLightningDatatableController {
     @AuraEnabled(cacheable=false)
     public static Response callBackend(String data,String objectApiName){
         try{
+            System.debug('teste');
             List<sObject> objectList = new List<sObject>();
             List<Object> mainDataList = (List<Object>)JSON.deserializeUntyped(data);
             for(Object objInstanceOfMainData : mainDataList){
